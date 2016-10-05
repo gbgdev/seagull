@@ -58,8 +58,6 @@
         <td class="wrap-td" title="{{printPorts(container.Ports)}}">{{printPorts(container.Ports)}}</td>
         <!-- Not print this now, <td>{{container.Created * 1000 | date:'yyyy-MM-dd'}}</td>  Full time with 'yyyy-MM-dd HH:mm:ss Z' -->
         <td class="wrap-td" title="{{container.Status}}">{{container.Status}}</td>
-        <!-- If the container is running, display stop button -->
-        <td ng-show="checkRunning(container)"><button class="btn btn-warning" ng-click="stopContainer(container.Id)">{{'stop'|translate}}</button></td>
       </tr>
     </tbody>
   </table>
