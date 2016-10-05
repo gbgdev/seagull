@@ -26,7 +26,6 @@
         <th><a href="" ng-click="predicate='RepoTags'; reverse=!reverse">{{'repotags'|translate}}</a></th>
         <th><a href="" ng-click="predicate='Created'; reverse=!reverse">{{'created'|translate}}</a></th>
         <th><a href="" ng-click="predicate='VirtualSize'; reverse=!reverse">{{'virtualsize'|translate}}</a></th>
-        <th>{{'operation'|translate}}</th>
       </tr>
     </thead>
 
@@ -41,7 +40,6 @@
         <td>{{image.RepoTags | array_to_string}}</td> <!-- Add comma between tags -->
         <td>{{image.Created * 1000 | date:'yyyy-MM-dd'}}</td> <!-- Full time with 'yyyy-MM-dd HH:mm:ss Z' -->
         <td>{{image.VirtualSize | filesize:2}}</td> <!-- Convert to readable size -->
-        <td><button class="btn btn-danger" ng-click="deleteImage(image.Id)">{{'delete'|translate}}</button></td>
       </tr>
     </tbody>
   </table>

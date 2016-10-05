@@ -41,7 +41,6 @@
         <th><a href="" ng-click="predicate='Ports'; reverse=!reverse">{{'ports'|translate}}</a></th>
         <!-- Not print this now, <th>{{'created'|translate}}</th> -->
         <th><a href="" ng-click="predicate='Status'; reverse=!reverse">{{'status'|translate}}</a></th>
-        <th>{{'operation'|translate}}</th>
       </tr>
     </thead>
 
@@ -61,13 +60,6 @@
         <td class="wrap-td" title="{{container.Status}}">{{container.Status}}</td>
         <!-- If the container is running, display stop button -->
         <td ng-show="checkRunning(container)"><button class="btn btn-warning" ng-click="stopContainer(container.Id)">{{'stop'|translate}}</button></td>
-        <!-- Else display start button -->
-        <td ng-show="!checkRunning(container)"><button class="btn btn-success" ng-click="startContainer(container.Id)">{{'start'|translate}}</button>
-          <!-- If the container is running, display nothing -->
-          <span ng-show="checkRunning(container)"></span>
-          <!-- Else display delete button -->
-          <span ng-show="!checkRunning(container)">&nbsp;&nbsp;<button class="btn btn-danger" ng-click="deleteContainer(container.Id)">{{'delete'|translate}}</button></span>
-	</td>
       </tr>
     </tbody>
   </table>

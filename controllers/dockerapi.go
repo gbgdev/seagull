@@ -110,30 +110,6 @@ func (this *DockerapiController) TopContainer() {
 	this.Ctx.WriteString(result)
 }
 
-/* Wrap docker remote API to start contaienrs */
-func (this *DockerapiController) StartContainer() {
-	id := this.GetString(":id")
-	address := "/containers/" + id + "/start"
-	result := RequestUnixSocket(address, "POST")
-	this.Ctx.WriteString(result)
-}
-
-/* Wrap docker remote API to stop contaienrs */
-func (this *DockerapiController) StopContainer() {
-	id := this.GetString(":id")
-	address := "/containers/" + id + "/stop"
-	result := RequestUnixSocket(address, "POST")
-	this.Ctx.WriteString(result)
-}
-
-/* Wrap docker remote API to delete contaienrs */
-func (this *DockerapiController) DeleteContainer() {
-	id := this.GetString(":id")
-	address := "/containers/" + id
-	result := RequestUnixSocket(address, "DELETE")
-	this.Ctx.WriteString(result)
-}
-
 /* Wrap docker remote API to get container stats */
 func (this *DockerapiController) GetContainerStats() {
 	id := this.GetString(":id")
@@ -163,14 +139,6 @@ func (this *DockerapiController) GetUserImage() {
 	repo := this.GetString(":repo")
 	address := "/images/" + user + "/" + repo + "/json"
 	result := RequestUnixSocket(address, "GET")
-	this.Ctx.WriteString(result)
-}
-
-/* Wrap docker remote API to delete image */
-func (this *DockerapiController) DeleteImage() {
-	id := this.GetString(":id")
-	address := "/images/" + id
-	result := RequestUnixSocket(address, "DELETE")
 	this.Ctx.WriteString(result)
 }
 

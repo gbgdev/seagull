@@ -9,10 +9,6 @@
     <!-- Display buttons in the right -->
     <div class="page-header-right">
       <!-- If the container is running, display stop button -->
-      <span ng-show="container.State.Running"><button class="btn btn-warning" ng-click="stopContainer(container.Id)">{{'stop'|translate}}</button>&nbsp;</span>
-      <!-- Else display start and delete buttons -->
-      <span ng-show="!container.State.Running"><button ng-show="!container.State.Running" class="btn btn-success" ng-click="startContainer(container.Id)">{{'start'|translate}}</button>&nbsp;</span>
-      <span ng-show="!container.State.Running"><button ng-show="!container.State.Running" class="btn btn-danger" ng-click="deleteContainer(container.Id)">{{'delete'|translate}}</button>&nbsp;</span>
       <button class="btn btn-info" ng-click="refresh()">{{'refresh'|translate}}</button>
     </div>
   </span> <!-- End of page header -->
